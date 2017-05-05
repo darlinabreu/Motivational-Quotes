@@ -1,7 +1,7 @@
 $(document).ready(function() {
     
     $("#submit").click(function(){
-        alert("hello");
+        //alert("hello");
         var name = $("#input").val();
        // var part1 = "./quotes.json";
         //var response =
@@ -12,7 +12,7 @@ $(document).ready(function() {
 //;
         
         $.getJSON("quotes.json",function(response) {
-            console.log(response);
+            //alert(response);
             // for (var i = 0; i < response.length; i++) {
             //     var info = response[i].quoteText;
             //     alert(info);
@@ -21,7 +21,8 @@ $(document).ready(function() {
         
                 
             // }
-            var random = Math.round(Math.random()) //needs to relate to response.length
+            var random = Math.floor(Math.random()*response.length); //needs to relate to response.length
+            //alert(random);
          var info = response[random].quoteText;
                
                $("#inspirations").text(info);
