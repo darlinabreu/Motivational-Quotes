@@ -1,34 +1,33 @@
 $(document).ready(function() {
-    
-    $("#submit").click(function(){
-        //alert("hello");
+    $("#clear").click(function() {
+        $("#inspirations").empty();
+    });
+    $("#submit").click(function() {
+
         var name = $("#input").val();
-       // var part1 = "./quotes.json";
-        //var response =
-       //{"quoteText":"We can change our lives. We can do, have, and be exactly what we wish.  ", "quoteAuthor":"Tony Robbins ", "senderName":"", "senderLink":"", "quoteLink":"http://forismatic.com/en/88061ce065/"}
+
+
+        $.getJSON("quotes.json", function(response) {
+
+            var random = Math.floor(Math.random() * response.length); //needs to relate to response.length
+
+            var info = response[random].quoteText;
+
+            $("#inspirations").text(info);
 
 
 
-//;
-        
-        $.getJSON("quotes.json",function(response) {
-            //alert(response);
-            // for (var i = 0; i < response.length; i++) {
-            //     var info = response[i].quoteText;
-            //     alert(info);
-            //     var quotesInfo = "<p>" + info;
-            //     $("#inspirations").append(quotesInfo);
-        
-                
-            // }
-            var random = Math.floor(Math.random()*response.length); //needs to relate to response.length
-            //alert(random);
-         var info = response[random].quoteText;
-               
-               $("#inspirations").text(info);
-            
-       });
-        
+        });
+        var searchVal = $("#input").val();
+        var part1 = "https://api.giphy.com/v1/gifs/random?&tag=motivational"
+        var part2 = "&api_key=dc6zaTOxFJmzC&limit=1&rating=pg-13"
+        var url = part1 + part2;
+
+        $.getJSON(url, function(response) {
+            var imgUrl = response.data.image_original_url;
+            var img = "<img src ='" + imgUrl + "'/>";
+            $("#inspirations").append(img);
+           
+        });
     });
 });
-    

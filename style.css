@@ -1,2 +1,4 @@
-.jumbotron{background-color:#b9fffc}
-//#b67fff
+.jumbotron-fluid{background-color:#b9fffc}
+.jumbotron-fluid{
+    height:100vh;
+}
