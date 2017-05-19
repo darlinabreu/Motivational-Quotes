@@ -19,8 +19,8 @@ $(document).ready(function() {
 
         });
         var searchVal = $("#input").val();
-        var part1 = "https://api.giphy.com/v1/gifs/random?&tag=motivational"
-        var part2 = "&api_key=dc6zaTOxFJmzC&limit=1&rating=pg-13"
+        var part1 = "https://api.giphy.com/v1/gifs/random?&tag=inspiration-quotes-motivation"
+        var part2 = "&api_key=dc6zaTOxFJmzC&limit=1&rating=pg"
         var url = part1 + part2;
 
         $.getJSON(url, function(response) {
