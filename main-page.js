@@ -19,7 +19,7 @@ $(document).ready(function() {
 
         });
         var searchVal = $("#input").val();
-        var part1 = "https://api.giphy.com/v1/gifs/random?&tag=cute-baby-animals";
+        var part1 = "https://api.giphy.com/v1/gifs/random?&tag=cute-kittens";
         var part2 = "&api_key=dc6zaTOxFJmzC&limit=1&rating=pg";
         var url = part1 + part2;
 
